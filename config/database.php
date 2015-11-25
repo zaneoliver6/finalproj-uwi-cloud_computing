@@ -54,7 +54,7 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => 'ec2-52-34-233-20.us-west-2.compute.amazonaws.com',
+            'host'      => 'localhost',
             'database'  => 'finalproj',
             'username'  => 'root',
             'password'  => 'P4ssw0rd',

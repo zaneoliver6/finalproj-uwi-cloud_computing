@@ -57,7 +57,7 @@ return [
             'host'      => 'localhost',
             'database'  => 'finalproj',
             'username'  => 'root',
-            'password'  => 'P4ssw0rd',
+            'password'  => 'Estuardo0',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-   // return view('welcome');
-    Route::get('contact', 
-  ['as' => 'contact', 'uses' => 'AboutController@create']);
-Route::post('contact', 
-  ['as' => 'contact_store', 'uses' => 'AboutController@store']);
-});
+//Route::get('/', function () {
+   
+   //return view('welcome');
+
+   Route::get('about', 'pagesController@about');
+   Route::get('CustomerComplaints', 'CustomerComplaintsController@index');
+   Route::get('CustomerComplaints/create', 'CustomerComplaintsController@create');
+
+   Route::post('CustomerComplaints', 'CustomerComplaintsController@store');
+
+
+

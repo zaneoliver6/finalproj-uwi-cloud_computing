@@ -33,27 +33,13 @@
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{ asset('/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
   </head>
-  <body class="skin-green">
+  <body>
     <div class="wrapper">
-      @include('includes.header')
-      @include('includes.sidebar')
-      <div class="content-wrapper">
-        <section class="content-header">
-          <h1>
-            @yield('title')
-            <small>@yield('subtitle')</small>
-          </h1>
-        </section>
+      <div >
         <section class="content">
           @yield('content')
         </section>
       </div>
-      <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0
-        </div>
-        <strong>Copyright &copy; 2015 (Zane Oliver &amp; Pedro Pixabaj).</strong> All rights reserved.
-      </footer>
     </div>
     <!--Add Javascript files -->
     <!-- jQuery 2.1.4 -->

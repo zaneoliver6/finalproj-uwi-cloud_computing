@@ -1,21 +1,67 @@
-//Login form
+@extends('blank')
+@section('content')
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+      <div class="row">
+				<div class="col-md-4">
+				</div>
+        <div class="col-md-4">
+          <p class="logo">
+            <span class="logo-lg"><h1 class="text-center"><b>Utility</b>CRM</h1></span>
+          </p>
+				</div>
+        <div class="col-md-4">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<form class="form-horizontal" role="form" method="POST" action="/auth/login">
+            {!! csrf_field() !!}
+						<div class="form-group">
 
-<form method="POST" action="/auth/login" >
-  {{!! csrf_field() !!}}
+							<label for="email" class="col-sm-2 control-label">
+								Email
+							</label>
+							<div class="col-sm-10">
+								<input type="email" name="email" class="form-control" id="email" />
+							</div>
+						</div>
+						<div class="form-group">
 
-  <div>
-    Email: <input type="email" name="email" value="{{ old('email') }}">
-  </div>
+							<label for="password" class="col-sm-2 control-label">
+								Password
+							</label>
+							<div class="col-sm-10">
+								<input type="password" name="password" class="form-control" id="password" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<div class="checkbox">
 
-  <div>
-    Password: <input type="password" name="password" id="password">
-  </div>
+									<label>
+										<input type="checkbox" name="remember"/> Remember me
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
 
-  <div>
-    <input type="checkbox" name="remember"> Remember Me
-  </div>
-
-  <div>
-    <button type="submit">Login</button>
-  </div>
-</form>
+								<button type="submit" class="btn btn-success">
+									Login
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-4">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@endsection

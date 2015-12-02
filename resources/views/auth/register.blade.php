@@ -82,6 +82,7 @@
 								<input type="email" name="email" class="form-control" id="email" value="{{ old('email') }}" />
 							</div>
 						</div>
+            
 						<div class="form-group">
 
 							<label for="password" class="col-sm-2 control-label">
@@ -117,7 +118,7 @@
     								<div class="radio">
 
     									<label>
-    										<input type="radio" name="optradio" value="basic"/>
+    										<input type="radio" name="subscriptionType" value="basic"/>
     									</label>
     								</div>
     							</div>
@@ -138,7 +139,7 @@
     								<div class="radio">
 
     									<label>
-    										<input type="radio" name="optradio" value="standard"/>
+    										<input type="radio" name="subscriptionType" value="standard"/>
     									</label>
     								</div>
     							</div>
@@ -159,7 +160,7 @@
     								<div class="radio">
 
     									<label>
-    										<input type="radio" name="optradio" value="premium"/>
+    										<input type="radio" name="subscriptionType" value="premium"/>
     									</label>
     								</div>
     							</div>

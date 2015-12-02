@@ -28,7 +28,7 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $fillable = ['fname','lname', 'companyName', 'email', 'password'];
+    protected $fillable = ['clientid','fname','lname','phonenumber', 'role', 'active', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -36,4 +36,16 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function getFullNameAttribute() {
+      return $this->fname . ' ' . $this->lname;
+    }
+
+    public function getStatusStrAttribute() {
+      return $this->active == 1 ? 'Active' : 'Inactive';
+    }
+
+    public function client() {
+      return $this->belongsTo('App\Client', 'clientid','id');
+    }
 }

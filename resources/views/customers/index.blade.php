@@ -32,8 +32,8 @@
         <td style="border-color:#00a65a"><?= $customer->phonenumber?></td>
         <td style="border-color:#00a65a"><?= $customer->status_str?></td>
         <td style="border-color:#00a65a">
-          <a href="customer/edit/<?= $customer->id?>" class="text-success" data-toggle="tooltip" title="Edit Customer"><i class="fa fa-pencil-square-o" style="padding-left:5"></i></a>
-          <a href="customer/view/<?= $customer->id?>" class="text-success" data-toggle="tooltip" title="View Customer"><i class="fa fa-file-text-o" style="padding-left:5"></i></a>
+          <a href="/customer/edit/<?= $customer->id?>" class="text-success" data-toggle="tooltip" title="Edit Customer"><i class="fa fa-pencil-square-o" style="padding-left:5"></i></a>
+          <a href="/customer/view/<?= $customer->id?>" class="text-success" data-toggle="tooltip" title="View Customer"><i class="fa fa-file-text-o" style="padding-left:5"></i></a>
           <? if($customer->active === 1) {
             ?>
               <a href="/customer/toggleStatus/<?= $customer->id?>" class="text-danger" data-toggle="tooltip" title="Deactivate"><i class="fa fa-times-circle-o" style="padding-left:5"></i></a>

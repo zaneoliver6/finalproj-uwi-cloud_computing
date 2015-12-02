@@ -7,15 +7,25 @@
               <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-              <p>Current User</p>
+              <p><?= $user!=NULL ? $user->full_name : "Unauthorized Access";?></p>
             </div>
           </div>
           <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active">
-              <a href="#">
+            <li>
+              <a href="/dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-users"></i> <span>Cusomter Management</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/customers">Customers</a><li>
+                <li><a href="#">Customers in arrears</a></li>
+                <li><a href="/customer/add">Add Customers</a></li>
+              </ul>
             </li>
           </ul>
         </section>

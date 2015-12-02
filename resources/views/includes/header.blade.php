@@ -39,14 +39,14 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">Current Logged in user name</span>
+                  <span class="hidden-xs"><?= $user!=NULL ? $user->full_name : "Unauthorized Access";?></span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     <p>
-                      Currently logged in user name
+                      <?= $user!=NULL ? $user->full_name : "Unauthorized Access";?>
                     </p>
                   </li>
                   <!-- Menu Footer-->
@@ -55,7 +55,7 @@
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
                     </div>
                     <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                      <a href="/auth/logout" class="btn btn-default btn-flat">Sign out</a>
                     </div>
                   </li>
                 </ul>

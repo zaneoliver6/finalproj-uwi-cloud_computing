@@ -24,7 +24,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/customers">Customers</a></li>
-                <li><a href="#">Customers in arrears</a></li>
+                <!-- <li><a href="#">Customers in arrears</a></li> -->
                 <li><a href="/customer/add">Add Customers</a></li>
               </ul>
             </li>

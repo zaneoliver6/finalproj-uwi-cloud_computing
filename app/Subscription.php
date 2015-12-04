@@ -10,7 +10,4 @@ class Subscription extends Model
 
     protected $fillable = ['clientid', 'limit', 'originalLimit', 'type', 'statementDate', 'dueDate', 'payDate'];
 
-    public function user() {
-      return $this->hasMany('App\User', 'id', 'clientid');
-    }
 }

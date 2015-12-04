@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use App\Client;
 use App\Subscription;
+use App\SubscriptionLog;
 use Auth;
 use Input;
 use Flash;
@@ -14,7 +15,7 @@ class SubscriptionController extends Controller
 {
 
   public function __construct() {
-      //$this->middleware('auth');
+      $this->middleware('auth');
   }
 
   public function scaleUp($amt) {
@@ -23,6 +24,15 @@ class SubscriptionController extends Controller
     $newLimit = $subscription->limit + $amt;
     $subscription->limit = $newLimit;
     $subscription->save();
+
+    $now = new \Datetime('now');
+    $subscriptionLog = new SubscriptionLog();
+    $subscriptionLog->clientid = Auth::User()->client->id;
+    $subscriptionLog->whatchange = 'increase by';
+    $subscriptionLog->towhat = $amt;
+    $subscriptionLog->date = $now->format('Y-m-d');
+    $subscriptionLog->enddate = $subscription->statementDate;
+    $subscriptionLog->save();
 
     Flash::success('Subscription increased.');
     return redirect('/dashboard');
@@ -39,6 +49,15 @@ class SubscriptionController extends Controller
     }
     $subscription->limit = $newLimit;
     $subscription->save();
+
+    $now = new \Datetime('now');
+    $subscriptionLog = new SubscriptionLog();
+    $subscriptionLog->clientid = Auth::User()->client->id;
+    $subscriptionLog->whatchange = 'decrease by';
+    $subscriptionLog->towhat = $amt;
+    $subscriptionLog->date = $now->format('Y-m-d');
+    $subscriptionLog->enddate = $subscription->statementDate;
+    $subscriptionLog->save();
 
     Flash::success('Subscription decreased.');
     return redirect('/dashboard');

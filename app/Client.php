@@ -17,4 +17,8 @@ class Client extends Model
     public function subscription() {
       return $this->hasOne('App\Subscription', 'clientid', 'id');
     }
+
+    public function subscriptionLogs() {
+      return $this->hasMany('App\SubscriptionLog', 'clientid', 'id');
+    }
 }

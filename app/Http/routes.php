@@ -31,4 +31,7 @@ Route::get('/subscription/scaleup/{amt}', 'SubscriptionController@scaleUp');
 Route::get('/subscription/scaledown/{amt}', 'SubscriptionController@scaleDown');
 Route::get('/subscription/change/{type}', 'SubscriptionController@change');
 
+
+//Billing
+Route::get('/bill/current' , 'BillingController@current');
 ?>

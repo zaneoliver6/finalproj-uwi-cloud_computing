@@ -1,6 +1,6 @@
 <?php
 
-//Main "Home" screen
+//"Home" screen
 Route::get('/', function (){
   return view('welcome');
 });
@@ -25,3 +25,10 @@ Route::post('customer/update/{id}','CustomerController@update');
 Route::get('customer/toggleStatus/{id}', 'CustomerController@toggleStatus');
 Route::get('customer/add', 'CustomerController@add');
 Route::post('customer/create' , 'CustomerController@create');
+
+//Subscription Management Routes
+Route::get('/subscription/scaleup/{amt}', 'SubscriptionController@scaleUp');
+Route::get('/subscription/scaledown/{amt}', 'SubscriptionController@scaleDown');
+Route::get('/subscription/change/{type}', 'SubscriptionController@change');
+
+?>

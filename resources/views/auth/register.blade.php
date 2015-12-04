@@ -26,7 +26,7 @@
 								First Name
 							</label>
 							<div class="col-sm-10">
-								<input type="text" name="fname" class="form-control" id="fname" value="{{ old('fname') }}" />
+								<input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" />
 							</div>
 						</div>
 
@@ -36,7 +36,7 @@
 								Last Name
 							</label>
 							<div class="col-sm-10">
-								<input type="text" name="lname" class="form-control" id="lname" value="{{ old('lname') }}" />
+								<input type="text" name="lname" class="form-control" id="lname"  placeholder="Last Name"/>
 							</div>
 						</div>
 
@@ -45,7 +45,7 @@
                 Phone Number:
               </label>
               <div class="col-sm-10">
-                <input type="number" name="phone" class="form-control" id="phone" data-toggle="tooltip" title="Enter number without dashes or spaces"/>
+                <input type="number" name="phone" class="form-control" id="phone" data-toggle="tooltip" title="Enter number without dashes or spaces" placeholder="Phone Number"/>
               </div>
             </div>
 
@@ -55,7 +55,7 @@
 								Company Name
 							</label>
 							<div class="col-sm-10">
-								<input type="text" name="companyName" class="form-control" id="companyName" value="{{ old('companyName') }}" />
+								<input type="text" name="companyName" class="form-control" id="companyName" placeholder="Company Name"/>
 							</div>
 						</div>
 
@@ -79,10 +79,39 @@
 								Email
 							</label>
 							<div class="col-sm-10">
-								<input type="email" name="email" class="form-control" id="email" value="{{ old('email') }}" />
+								<input type="email" name="email" class="form-control" id="email" placeholder="Email Address"/>
 							</div>
 						</div>
-            
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="address">Address</label>
+              <div class="col-sm-10">
+              <input id="address" name="address" type="text" placeholder="Street Address" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="city">City</label>
+              <div class="col-sm-10">
+              <input id="city" name="city" type="text" placeholder="City" class="form-control input" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="state">State</label>
+              <div class="col-sm-10">
+              <input id="state" name="state" type="text" placeholder="State" class="form-control input-md" />
+
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label" for="zip">Zip/Postal Code</label>
+              <div class="col-sm-10">
+              <input id="zip" name="zip" type="text" placeholder="Zip/Postal Code" class="form-control input-md" />
+              </div>
+            </div>
+
 						<div class="form-group">
 
 							<label for="password" class="col-sm-2 control-label">
@@ -170,8 +199,7 @@
 					  </div>
 
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
-
+							<div class="col-sm-offset-1 col-sm-10">
 								<button type="submit" class="btn btn-success btn-block">
 									Register
 								</button>

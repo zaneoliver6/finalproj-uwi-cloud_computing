@@ -13,4 +13,8 @@ class Client extends Model
     public function user() {
       return $this->hasMany('App\User', 'id', 'clientid');
     }
+
+    public function subscription() {
+      return $this->hasOne('App\Subscription', 'clientid', 'id');
+    }
 }

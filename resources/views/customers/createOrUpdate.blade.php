@@ -34,7 +34,7 @@
         First Name
       </label>
       <div class="col-sm-10">
-        <input type="text" name="fname" class="form-control" id="fname" value="<?= isset($customer) ? $customer->fname : ''?>" />
+        <input type="text" name="fname" class="form-control" placeholder="First Name" id="fname" value="<?= isset($customer) ? $customer->fname : ''?>" />
       </div>
     </div>
 
@@ -44,7 +44,7 @@
         Last Name
       </label>
       <div class="col-sm-10">
-        <input type="text" name="lname" class="form-control" id="lname" value="<?= isset($customer) ? $customer->lname : ''?>" />
+        <input type="text" name="lname" class="form-control" placeholder="Last Name" id="lname" value="<?= isset($customer) ? $customer->lname : ''?>" />
       </div>
     </div>
 
@@ -53,7 +53,7 @@
         Phone Number:
       </label>
       <div class="col-sm-10">
-        <input type="text" name="phone" class="form-control" id="phone" data-toggle="tooltip" title="Enter number without dashes or spaces" value="<?= isset($customer) ? $customer->phonenumber : ''?>"/>
+        <input type="text" name="phone" class="form-control" placeholder="Phone Number" id="phone" data-toggle="tooltip" title="Enter number without dashes or spaces" value="<?= isset($customer) ? $customer->phonenumber : ''?>"/>
       </div>
     </div>
 
@@ -63,7 +63,36 @@
         Email
       </label>
       <div class="col-sm-10">
-        <input type="email" name="email" class="form-control" id="email" value="<?= isset($customer) ? $customer->email : ''?>" />
+        <input type="email" name="email" class="form-control" placeholder="Email Address" id="email" value="<?= isset($customer) ? $customer->email : ''?>" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="address">Address</label>
+      <div class="col-sm-10">
+      <input id="address" name="address" type="text" placeholder="Street Address" class="form-control" value="<?= isset($customer) ? $customer->address->address : ''?>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="city">City</label>
+      <div class="col-sm-10">
+      <input id="city" name="city" type="text" placeholder="City" class="form-control input" value="<?= isset($customer) ? $customer->address->city : ''?>">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="state">State</label>
+      <div class="col-sm-10">
+      <input id="state" name="state" type="text" placeholder="State" class="form-control input-md" value="<?= isset($customer) ? $customer->address->state : ''?>">
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="zip">Zip/Postal Code</label>
+      <div class="col-sm-10">
+      <input id="zip" name="zip" type="text" placeholder="Zip/Postal Code" class="form-control input-md" value="<?= isset($customer) ? $customer->address->zip : ''?>">
       </div>
     </div>
 
@@ -72,7 +101,7 @@
         Password
       </label>
       <div class="col-sm-10">
-        <input type="password" name="password" class="form-control" id="password"  data-toggle="tooltip" title="Leave Blank if not updating"/>
+        <input type="password" name="password" class="form-control" placeholder="Password" id="password"  data-toggle="tooltip" title="Leave Blank if not updating"/>
       </div>
     </div>
 
@@ -82,7 +111,7 @@
     Confirm	Password
     </label>
     <div class="col-sm-10">
-      <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" data-toggle="tooltip" title="Leave Blank if not updating" ?/>
+      <input type="password" name="password_confirmation" class="form-control" placeholder="Password Confirmation" id="password_confirmation" data-toggle="tooltip" title="Leave Blank if not updating" ?/>
     </div>
   </div>
 
@@ -96,5 +125,10 @@
   </div>
 
   </form>
+</div>
+<div class="col-md-4">
+  <div class="pull-right">
+    <a href="<?= $backUrl?>" class="btn btn-success">Back</a>
+  </div>
 </div>
 @endsection

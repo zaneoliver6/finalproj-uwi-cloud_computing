@@ -12,6 +12,7 @@
           </div>
           <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
+            <? if($user->role == 2) {?>
             <li>
               <a href="/dashboard">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
@@ -22,11 +23,27 @@
                 <i class="fa fa-users"></i> <span>Cusomter Management</span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/customers">Customers</a><li>
+                <li><a href="/customers">Customers</a></li>
                 <li><a href="#">Customers in arrears</a></li>
                 <li><a href="/customer/add">Add Customers</a></li>
               </ul>
             </li>
+            <li>
+              <a href="/requests">
+                <i class="fa fa-comments"></i> <span>Complaints &amp; Requests</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-info-circle"></i><span>Billing</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/bill/current">View Current Bill</a></li>
+                <li><a href="/bill/past">View past bills</a></li>
+              </ul>
+            </li>
+          <?}?>
+
           </ul>
         </section>
         <!-- /.sidebar -->

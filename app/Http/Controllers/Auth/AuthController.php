@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Client;
+use App\Address;
+use App\Subscription;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -62,12 +64,23 @@ class AuthController extends Controller
         $client = Client::create([
           'companyName' => $data['companyName'],
           'type' => $data['utiltype'],
-          'subscriptionType' => $data['subscriptionType'],
           'active' => 1
         ]);
 
+        $subsLimit = $data['subscriptionType'] == 'basic' ? 250000 : ($data['subscriptionType'] == 'standard' ? 500000 : 1250000);
+        $now = new \Datetime('now');
+        $currMonth = $now->format('m');
+        $currYear = $now->format('Y');
+        $statementDate = \Datetime::createFromFormat('Y-m-d', $currYear . '-' . $currMonth . '-26');
+        $dueDate = new \Datetime($statementDate->format('Y-m-d'));
+        $dueDate->modify('+2 weeks');
+
+        $subscription = Subscription::create(['clientid' => $client->id, 'limit' => $subsLimit, 'originalLimit' => $subsLimit, 'type' => $data['subscriptionType'], 'statementDate' => $statementDate->format('Y-m-d'), 'dueDate' => $dueDate->format('Y-m-d')]);
+        $address = Address::create(['address' => $data['address'], 'state' => $data['state'], 'city' => $data['city'], 'zip' => $data['zip']]);
+
         return User::create([
             'clientid' => $client->id,
+            'addressid' => $address->id,
             'fname' => $data['fname'],
             'lname' => $data['lname'],
             'phonenumber' => $data['phone'],

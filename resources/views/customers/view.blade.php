@@ -43,18 +43,39 @@
     </div>
   </div>
 
+  <div class="box box-success">
+    <div class="box-header with-border">
+      <h3 class="box-title">Address Information</h3>
+      <div class="box-body">
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item"><b>Address</b><span class="pull-right"><?= $customer->address->address?></span></li>
+          <li class="list-group-item"><b>City</b><span class="pull-right"><?= $customer->address->city?></span></li>
+          <li class="list-group-item"><b>State</b><span class="pull-right"><?= $customer->address->state?></span></li>
+          <li class="list-group-item"><b>Zip</b><span class="pull-right"><?= $customer->address->zip?></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <? if($cntUsages > 0 ) {
+    $usages = $customer->usages;
+    ?>
     <div class="box box-success">
       <div class="box-header with-border">
-        <h3 class="box-title">Usage Information</h3>
+        <h3 class="box-title">Usage Information</h3><span class="pull-right">Statement Date</span>
         <div class="box-body">
           <ul class="list-group list-group-unbordered">
+            <? foreach($usages as $usage) {
+                $sd = new \Datetime($usage->statementDate);
+              ?>
             <li class="list-group-item">
-              <b>Usage</b>
+              <b><?= $usage->amount . ' ' . $usage->units?></b><span class="pull-right"><?= $sd->format('Y-m-d')?></span></li>
             </li>
+            <?}?>
           </ul>
         </div>
       </div>
     </div>
+  <? }  ?>
 </div>
 <div class="col-md-3">
   <div class="pull-right">

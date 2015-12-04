@@ -58,6 +58,7 @@ return [
             'database'  => 'finalproj',
             'username'  => 'root',
             'password'  => 'P4ssw0rd',
+            'unix_socket' => '/tmp/mysql.sock',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

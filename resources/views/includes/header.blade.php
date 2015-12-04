@@ -15,18 +15,18 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Notifications: style can be found in dropdown.less -->
-              <li class="dropdown notifications-menu">
+              <!-- <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i class="fa fa-bell-o"></i>
                   <span class="label label-warning"></span>
                 </a>
                 <ul class="dropdown-menu">
                   <li class="header">You have 0 notifications</li>
-                  <li>
+                  <li> -->
                     <!-- inner menu: contains the actual data -->
-                    <ul class="menu">
+                    <!-- <ul class="menu"> -->
                       <!-- once table is created then the following li can be automatically generated in PHP -->
-                      <li>
+                      <!-- <li>
                         <a href="#">
                           <i class="fa fa-users text-aqua"></i> Some notification
                         </a>
@@ -34,7 +34,7 @@
                     </ul>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">

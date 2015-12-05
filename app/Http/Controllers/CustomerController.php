@@ -8,6 +8,7 @@ use App\Address;
 use App\Usage;
 use App\Http\Controllers\Controller;
 use Auth;
+use Mail;
 use Input;
 use Flash;
 
@@ -15,6 +16,12 @@ class CustomerController extends Controller
 {
   public function __construct() {
       $this->middleware('auth');
+
+      if(Auth::User() != null) {
+        if(Auth::User()->role === 3) {
+          Redirect::to('/dashboard/customer')->send();
+        }
+      }
   }
 
   public function index($active = 1) {
@@ -146,18 +153,49 @@ class CustomerController extends Controller
     return redirect('/customer/view/'. $customer->id);
   }
 
-  public function arrears() {
-    $customers = User::where('active', $active)->where('clientid', Auth::User()->clientid)->get();
+  public function email($id) {
+    $customer =  User::where('id', $id)->where('clientid', Auth::User()->clientid)->firstOrFail();
+    return view('customers.email',
+                  array('title' => 'Email Message',
+                        'sub' => Auth::User()->client->companyName,
+                        'user' => Auth::User(),
+                        'customer' => $customer
+                      )
+                  );
 
-    return view('customers.index',
-                array('title' => 'Customers',
-                      'sub' => Auth::User()->client->companyName,
-                      'user' => Auth::User(),
-                      'customers' => $customers,
-                      'active' => $active
-                    )
-                );
   }
+
+  public function send($id) {
+    $customer =  User::where('id', $id)->where('clientid', Auth::User()->clientid)->firstOrFail();
+    $title = Input::get('title');
+    $body = Input::get('body');
+    $fromName = Auth::User()->client->companyName;
+    $email = $customer->email;
+    $name = $customer->full_name;
+
+    Mail::queue('emails.customeremail', ['customer' => $name, 'body' => $body], function ($message) use ($email, $name, $title, $fromName) {
+      $message->from('zaneoliver6@gmail.com', $fromName);
+      $message->to($email, $name);
+      $message->subject($title);
+    });
+
+    Flash::info('Email Sent');
+    return redirect('/customers');
+
+  }
+
+  // public function arrears() {
+  //   $customers = User::where('active', $active)->where('clientid', Auth::User()->clientid)->get();
+  //
+  //   return view('customers.index',
+  //               array('title' => 'Customers',
+  //                     'sub' => Auth::User()->client->companyName,
+  //                     'user' => Auth::User(),
+  //                     'customers' => $customers,
+  //                     'active' => $active
+  //                   )
+  //               );
+  // }
 
 }
 

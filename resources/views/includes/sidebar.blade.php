@@ -44,6 +44,28 @@
             </li>
           <?}?>
 
+          <? if($user->role == 3) {?>
+            <li>
+              <a href="/dashboard/customer">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="/requests/new">
+                <i class="fa fa-comments"></i> <span>Complaints &amp; Requests</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa fa-info-circle"></i><span>Billing</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/bill/customer/current">View Current Bill</a></li>
+                <li><a href="/bill/customer/pay">View past bills</a></li>
+              </ul>
+            </li>
+          <?}?>
+
           </ul>
         </section>
         <!-- /.sidebar -->

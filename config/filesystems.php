@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => 'local',
+    'default' => 's3',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,10 +64,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key'    => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'key'    => 'AKIAIFLIMOIO34PZDP4Q',
+            'secret' => '6MF0SNbUB3awrHAQAh3w6pRYQEfNgBU0wLCWY2/A',
+            'region' => 'us-west-2',
+            'bucket' => 'finalproj-zo-pp-2015',
         ],
 
         'rackspace' => [

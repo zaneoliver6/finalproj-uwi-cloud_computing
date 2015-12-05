@@ -16,6 +16,12 @@ class SubscriptionController extends Controller
 
   public function __construct() {
       $this->middleware('auth');
+
+      if(Auth::User() != null) {
+        if(Auth::User()->role === 3) {
+          Redirect::to('/dashboard/customer')->send();
+        }
+      }
   }
 
   public function scaleUp($amt) {

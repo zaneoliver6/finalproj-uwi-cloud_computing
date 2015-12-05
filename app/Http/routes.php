@@ -13,6 +13,14 @@ Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
+// Password reset link request routes...
+Route::get('password/email', 'Auth\PasswordController@getEmail');
+Route::post('password/email', 'Auth\PasswordController@postEmail');
+
+// Password reset routes...
+Route::get('password/reset/{token}', 'Auth\PasswordController@getReset');
+Route::post('password/reset', 'Auth\PasswordController@postReset');
+
 //Registration Routes
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
@@ -25,6 +33,8 @@ Route::post('customer/update/{id}','CustomerController@update');
 Route::get('customer/toggleStatus/{id}', 'CustomerController@toggleStatus');
 Route::get('customer/add', 'CustomerController@add');
 Route::post('customer/create' , 'CustomerController@create');
+Route::get('/customer/email/{id}','CustomerController@email');
+Route::post('/customer/send/{id}','CustomerController@send');
 
 //Subscription Management Routes
 Route::get('/subscription/scaleup/{amt}', 'SubscriptionController@scaleUp');
@@ -34,4 +44,8 @@ Route::get('/subscription/change/{type}', 'SubscriptionController@change');
 
 //Billing
 Route::get('/bill/current' , 'BillingController@current');
+
+
+//Customer section
+Route::get('/dashboard/customer', 'CustomerDashboardController@index');
 ?>

@@ -138,7 +138,7 @@
                 <hr>
                  Manage 250,000 Users
                 <hr>
-                Additional Buy: Auto-scaling
+                Scale user limit as needed.
                 <hr>
                 $25 per month
                 <hr>
@@ -159,7 +159,7 @@
                 <hr>
                  Manage 500,000 Users
                 <hr>
-                Additional Buy: Auto-scaling
+                Scale user limit as needed.
                 <hr>
                 $50 per month
                 <hr>
@@ -180,7 +180,7 @@
                 <hr>
                  Manage 1.25 Million Users
                 <hr>
-                Includes: Active Auto-Scaling
+                Scale user limit as needed.
                 <hr>
                 $75 per month
                 <hr>

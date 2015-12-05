@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('QUEUE_DRIVER', 'sync'),
+    'default' => env('QUEUE_DRIVER', 'sqs'),
 
     /*
     |--------------------------------------------------------------------------
@@ -51,10 +51,10 @@ return [
 
         'sqs' => [
             'driver' => 'sqs',
-            'key'    => 'your-public-key',
-            'secret' => 'your-secret-key',
-            'queue'  => 'your-queue-url',
-            'region' => 'us-east-1',
+            'key'    => 'AKIAIFLIMOIO34PZDP4Q',
+            'secret' => '6MF0SNbUB3awrHAQAh3w6pRYQEfNgBU0wLCWY2/A',
+            'queue'  => 'https://sqs.us-west-2.amazonaws.com/630939738263/finalproj-zo-pp-2015',
+            'region' => 'us-west-2',
         ],
 
         'iron' => [

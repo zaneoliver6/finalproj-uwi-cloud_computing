@@ -48,4 +48,7 @@ Route::get('/bill/current' , 'BillingController@current');
 
 //Customer section
 Route::get('/dashboard/customer', 'CustomerDashboardController@index');
+
+//Profile
+Route::get('/profile', 'ProfileController@index');
 ?>

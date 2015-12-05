@@ -21,6 +21,9 @@ class SubscriptionController extends Controller
         if(Auth::User()->role === 3) {
           Redirect::to('/dashboard/customer')->send();
         }
+        if(Auth::User()->role === 1) {
+          //Redirect::to('/dashboard/customer')->send();
+        }
       }
   }
 

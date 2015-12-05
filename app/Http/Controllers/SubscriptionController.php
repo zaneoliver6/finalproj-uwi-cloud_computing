@@ -7,6 +7,7 @@ use App\User;
 use App\Client;
 use App\Subscription;
 use App\SubscriptionLog;
+use Redirect;
 use Auth;
 use Input;
 use Flash;

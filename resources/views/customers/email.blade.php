@@ -14,7 +14,7 @@
 	<form class="form-horizontal" role="form" method="POST" action="/customer/send/<?= $customer->id?>" id="emailForm">
     {!! csrf_field() !!}
 		<div class="form-group">
-			<label for="email" class="col-sm-2 control-label">
+			<label for="title" class="col-sm-2 control-label">
 			    Title
 			</label>
 			<div class="col-sm-10">
@@ -23,7 +23,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="password" class="col-sm-2 control-label">
+			<label for="body" class="col-sm-2 control-label">
 				Body
 			</label>
 			<div class="col-sm-10">

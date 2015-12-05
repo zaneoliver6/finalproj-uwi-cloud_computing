@@ -51,4 +51,10 @@ Route::get('/dashboard/customer', 'CustomerDashboardController@index');
 
 //Profile
 Route::get('/profile', 'ProfileController@index');
+Route::get('/profile/edit', 'ProfileController@edit');
+Route::post('/profile/update', 'ProfileController@update');
+
+//Request routes
+Route::get('/request/new', 'RequestController@newRequest');
+Route::post('/request/create', 'RequestController@create');
 ?>

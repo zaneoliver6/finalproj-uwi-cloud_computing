@@ -9,6 +9,7 @@ use App\Subscription;
 use App\SubscriptionLog;
 use Auth;
 use Input;
+use Redirect;
 use Flash;
 
 class BillingController extends Controller

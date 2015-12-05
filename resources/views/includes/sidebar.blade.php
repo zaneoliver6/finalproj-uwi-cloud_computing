@@ -51,7 +51,7 @@
               </a>
             </li>
             <li>
-              <a href="/requests/new">
+              <a href="/request/new">
                 <i class="fa fa-comments"></i> <span>Complaints &amp; Requests</span>
               </a>
             </li>

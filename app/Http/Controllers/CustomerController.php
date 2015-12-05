@@ -6,6 +6,7 @@ use App\User;
 use App\Client;
 use App\Address;
 use App\Usage;
+use Redirect;
 use App\Http\Controllers\Controller;
 use Auth;
 use Mail;

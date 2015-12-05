@@ -59,6 +59,7 @@
 </div>
 <div class="col-md-3">
   <div class="pull-right">
+    <a class="btn btn-success"  href="/profile/edit">Edit</a>
     <a class="btn btn-success"  href="/dashboard">Back</a>
   </div>
 </div>

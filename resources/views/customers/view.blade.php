@@ -23,7 +23,7 @@
 <div class="col-md-6">
   <div class="box box-success">
     <div class="box-body box-profile">
-      <img class="profile-user-img img-responsive img-circle" src="" alt="<?= $customer->full_name?> profile picture">
+      <img class="profile-user-img img-responsive img-circle" src="/dist/img/avatar.png" alt="<?= $customer->full_name?> profile picture">
       <h3 class="profile-username text-center"><?= $customer->full_name?></h3>
 
       <ul class="list-group list-group-unbordered">

@@ -4,7 +4,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="/dist/img/avatar.png" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p><?= $user!=NULL ? $user->full_name : "Unauthorized Access";?></p>
@@ -61,7 +61,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/bill/customer/current">View Current Bill</a></li>
-                <li><a href="/bill/customer/pay">View past bills</a></li>
               </ul>
             </li>
           <?}?>

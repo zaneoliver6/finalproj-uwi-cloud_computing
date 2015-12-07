@@ -19,7 +19,7 @@ class BillingController extends Controller
       $this->middleware('auth');
 
       if(Auth::User() != null) {
-        if(Auth::User()->role === 3) {
+        if(Auth::User()->role === '3') {
           Redirect::to('/dashboard/customer')->send();
         }
       }

@@ -17,6 +17,17 @@ class RequestController extends Controller
       $this->middleware('auth');
   }
 
+  public function index() {
+    $req = Requests::where('clientid', Auth::User()->client->id)->get();
+
+    return view('request.index',
+              array('title' => 'Requests',
+              'sub' => Auth::User()->client->companyName,
+              'user' => Auth::User(),
+              'reqs' => $req
+            ));
+  }
+
   public function newRequest() {
     $currUser = Auth::User();
 

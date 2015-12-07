@@ -91,7 +91,7 @@
     <span class="info-box-icon"><i class="fa fa-comments" style="padding-top:20;"></i></span>
     <div class="info-box-content">
       <span class="info-box-text">New Complaints &amp; Requests</span>
-      <span class="info-box-number"><h2>100</h2></span>
+      <span class="info-box-number"><h2><?= $numReq?></h2></span>
     </div>
   </div>
 

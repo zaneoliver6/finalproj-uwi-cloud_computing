@@ -10,4 +10,9 @@ class Requests extends Model
 
     protected $fillable = ['clientid', 'userid', 'subject', 'type', 'complaint'];
 
+
+    public function user() {
+      return $this->belongsTo('App\User', 'userid');
+    }
+
 }

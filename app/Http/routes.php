@@ -55,6 +55,7 @@ Route::get('/profile/edit', 'ProfileController@edit');
 Route::post('/profile/update', 'ProfileController@update');
 
 //Request routes
+Route::get('/requests', 'RequestController@index');
 Route::get('/request/new', 'RequestController@newRequest');
 Route::post('/request/create', 'RequestController@create');
 ?>

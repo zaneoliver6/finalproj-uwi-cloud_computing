@@ -12,6 +12,7 @@
 <div class="pull-right" style="padding-bottom:20">
   <a class="btn btn-success"  href="customer/add">Add Customer</a>
   <a class="btn btn-success" href="<?= $active == 1 ? '/customers/0' : '/customers/1'?>"><?= $active == 1 ? 'View Inactive' : "View Active"?></a>
+  <a class="btn btn-success"  href="/dashboard">Back</a>
 </div>
 <table id="customers" class="table table-striped table-bordered table-hover table-responsive table-condensed" cellspacing="0" style="border-color:#00a65a">
   <thead>

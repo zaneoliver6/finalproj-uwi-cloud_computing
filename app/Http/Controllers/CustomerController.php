@@ -63,17 +63,26 @@ class CustomerController extends Controller
 
     $address = Address::create(['address' => Input::get('address'), 'state' => Input::get('state'), 'city' => Input::get('city'), 'zip' => Input::get('zip')]);
 
-    $customer = User::create([
-        'clientid' => Auth::User()->clientid,
-        'addressid' => $address->id,
-        'fname' => Input::get('fname'),
-        'lname' => Input::get('lname'),
-        'phonenumber' => Input::get('phone'),
-        'role' => 3,
-        'email' => Input::get('email'),
-        'password' => bcrypt(Input::get('password')),
-        'active' => 1
-    ]);
+    if(Input::get('password') == Input::get('password_confirmation')) {
+      if(Input::get('password') != '') {
+
+        $customer = User::create([
+            'clientid' => Auth::User()->clientid,
+            'addressid' => $address->id,
+            'fname' => Input::get('fname'),
+            'lname' => Input::get('lname'),
+            'phonenumber' => Input::get('phone'),
+            'role' => 3,
+            'email' => Input::get('email'),
+            'password' => bcrypt(Input::get('password')),
+            'active' => 1
+        ]);
+
+      }
+    } else {
+      Flash::error('Passwords do not match up');
+      return redirect('/customer/add/');
+    }
 
     $usage = Usage::create(['cid' => $customer->id, 'units' => $units, 'statementDate' => $statementDate->format('Y-m-d'), 'dueDate' => $dueDate->format('Y-m-d')]);
 

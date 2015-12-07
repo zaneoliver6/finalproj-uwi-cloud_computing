@@ -12,9 +12,10 @@ class CustomerDashboardController extends Controller
 {
   public function __construct() {
       $this->middleware('auth');
-
-      if(Auth::User()->active == 0) {
-        Redirect::to('/auth/logout')->send();
+      if(Auth::User() != null) {
+        if(Auth::User()->active == 0) {
+          Redirect::to('/auth/logout')->send();
+        }
       }
   }
 

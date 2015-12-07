@@ -18,10 +18,10 @@ class DashboardController extends Controller
         if(Auth::User()->role == 3) {
           Redirect::to('/dashboard/customer')->send();
         }
-      }
 
-      if(Auth::User()->active == 0) {
-        Redirect::to('/auth/logout')->send();
+        if(Auth::User()->active == 0) {
+          Redirect::to('/auth/logout')->send();
+        }
       }
   }
 

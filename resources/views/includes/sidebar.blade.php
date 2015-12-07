@@ -39,7 +39,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="/bill/current">View Current Bill</a></li>
-                <li><a href="/bill/past">View past bills</a></li>
               </ul>
             </li>
           <?}?>

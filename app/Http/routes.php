@@ -44,6 +44,7 @@ Route::get('/subscription/change/{type}', 'SubscriptionController@change');
 
 //Billing
 Route::get('/bill/current' , 'BillingController@current');
+Route::get('/bill/customer/current' , 'CustomerDashboardController@bill');
 
 
 //Customer section

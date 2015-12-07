@@ -12,6 +12,10 @@ class CustomerDashboardController extends Controller
 {
   public function __construct() {
       $this->middleware('auth');
+
+      if(Auth::User()->active == 0) {
+        Redirect::to('/auth/logout')->send();
+      }
   }
 
   public function index() {
@@ -22,6 +26,15 @@ class CustomerDashboardController extends Controller
               'sub' => $currUser->client->companyName,
               'user' => $currUser,
               'cntUsages' => $cntUsages
+            ));
+  }
+
+  public function bill() {
+    $currUser = Auth::User();
+    return view('customer.bill',
+              array('title' => 'Current Bill',
+              'sub' => $currUser->client->companyName,
+              'user' => $currUser
             ));
   }
 }

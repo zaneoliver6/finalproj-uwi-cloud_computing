@@ -19,9 +19,13 @@ class CustomerController extends Controller
       $this->middleware('auth');
 
       if(Auth::User() != null) {
-        if(Auth::User()->role === '3') {
+        if(Auth::User()->role == 3) {
           Redirect::to('/dashboard/customer')->send();
         }
+      }
+
+      if(Auth::User()->active == 0) {
+        Redirect::to('/auth/logout')->send();
       }
   }
 

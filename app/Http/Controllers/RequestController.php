@@ -15,6 +15,10 @@ class RequestController extends Controller
 {
   public function __construct() {
       $this->middleware('auth');
+
+      if(Auth::User()->active == 0) {
+        Redirect::to('/auth/logout')->send();
+      }
   }
 
   public function index() {
